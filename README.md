@@ -3,6 +3,13 @@
 # AdvancedList
 An advanced, prettier, per-role /list for Bukkit.
 
+_This plugin was done as a request for the **HydrusPvP** server._
+
+#### [Downloads](https://github.com/Rayzr522/AdvancedList/releases)
+
+## Requirements
+- Vault
+
 ## Commands
 ### `/list`
 Permission: `AdvancedList.use`  
