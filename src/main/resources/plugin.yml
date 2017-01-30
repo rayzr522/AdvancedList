@@ -1,0 +1,12 @@
+main: com.rayzr522.advancedlist.AdvancedList
+name: AdvancedList
+version: 1.0.0
+description: An advanced, prettier, per-role /list for Bukkit.
+author: Rayzr
+#depend: [CreativelyNamedLib]
+#commands:
+#  advancedlist:
+#    description: AdvancedList main command
+#    aliases: [alias1,alias2]
+#    usage: "/advancedlist [command]"
+#    permission: AdvancedList.main
