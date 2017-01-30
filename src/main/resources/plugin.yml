@@ -1,6 +1,6 @@
 main: com.rayzr522.advancedlist.AdvancedList
 name: AdvancedList
-version: 1.0.0
+version: 1.0.1
 description: An advanced, prettier, per-role /list for Bukkit.
 author: Rayzr
 depend: [Vault]

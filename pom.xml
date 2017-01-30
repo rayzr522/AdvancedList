@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.rayzr522</groupId>
 	<artifactId>advancedlist</artifactId>
-	<version>1.0.0</version>
+	<version>1.0.1</version>
 	<name>AdvancedList</name>
 	<description>An advanced, prettier, per-role /list for Bukkit.</description>
 	<repositories>
