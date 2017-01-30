@@ -1,3 +1,5 @@
+[![Logo](https://github.com/Rayzr522/AdvancedList/raw/master/img/logo-cropped.png)](https://github.com/Rayzr522/AdvancedList)
+
 # AdvancedList
 An advanced, prettier, per-role /list for Bukkit.
 
