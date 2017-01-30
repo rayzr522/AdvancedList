@@ -35,12 +35,14 @@ public class CommandList implements CommandExecutor {
         Permission perms = plugin.getPerms();
         Map<String, String> output = new LinkedHashMap<>();
 
+        String sep = plugin.getConfig().getString("name-separator");
+
         Bukkit.getOnlinePlayers().forEach(p -> {
             String rank = perms.getPrimaryGroup(p);
             if (!output.containsKey(rank)) {
                 output.put(rank, p.getDisplayName());
             } else {
-                output.put(rank, output.get(rank) + ", " + p.getDisplayName());
+                output.put(rank, output.get(rank) + sep + p.getName());
             }
         });
 

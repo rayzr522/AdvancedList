@@ -1,7 +1,8 @@
 # Example output of this:
 # [Mod]: Player1, Player2, Player3, Player4, ...
 # [Admin]: Player5, Player6, Player7, Player8, ...
-rank-format: "&6[&4%s&6]&8 %s"
+rank-format: "&6[&c%s&6]&c %s"
+name-separator: "&6, &c"
 
 prefix: "&8\u00bb&6 "
 
