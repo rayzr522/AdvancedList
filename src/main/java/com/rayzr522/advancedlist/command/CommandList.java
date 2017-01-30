@@ -40,7 +40,7 @@ public class CommandList implements CommandExecutor {
         Bukkit.getOnlinePlayers().forEach(p -> {
             String rank = perms.getPrimaryGroup(p);
             if (!output.containsKey(rank)) {
-                output.put(rank, p.getDisplayName());
+                output.put(rank, p.getName());
             } else {
                 output.put(rank, output.get(rank) + sep + p.getName());
             }
