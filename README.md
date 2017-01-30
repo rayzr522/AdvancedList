@@ -1,4 +1,15 @@
 # AdvancedList
 An advanced, prettier, per-role /list for Bukkit.
 
-*Note: This README is a pre-generated stub*
+## Commands
+### `/list`
+Permission: `AdvancedList.use`  
+Description: Lists all online players
+
+### `/advancedlist`
+Permission: `AdvancedList.admin`  
+Description: Shows the current version of **AdvancedList** that is running on your server
+
+### `/advancedlist reload`
+Permission: `AdvancedList.admin`  
+Description: Reloads the config
