@@ -27,7 +27,7 @@ public class CommandAdvancedList implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (args.length > 0 && args[0].equalsIgnoreCase("reload")) {
-            plugin.reloadConfig();
+            plugin.reload();
             sender.sendMessage(plugin.getMessage("reloaded"));
         } else {
             sender.sendMessage(String.format(plugin.getMessage("version"), plugin.getDescription().getVersion()));

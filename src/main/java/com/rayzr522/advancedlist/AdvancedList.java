@@ -1,6 +1,12 @@
 package com.rayzr522.advancedlist;
 
+import java.io.File;
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
+
 import org.bukkit.ChatColor;
+import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -14,6 +20,7 @@ import net.milkbowl.vault.permission.Permission;
  */
 public class AdvancedList extends JavaPlugin {
 
+    private Map<String, String> ranks = new HashMap<String, String>();
     private Permission perms;
 
     @Override
@@ -24,10 +31,41 @@ public class AdvancedList extends JavaPlugin {
             return;
         }
 
-        saveDefaultConfig();
+        reload();
 
         getCommand("list").setExecutor(new CommandList(this));
         getCommand("advancedlist").setExecutor(new CommandAdvancedList(this));
+    }
+
+    public void reload() {
+        saveDefaultConfig();
+        reloadConfig();
+
+        if (!getFile("ranks.yml").exists()) {
+            try {
+                YamlConfiguration ranks = new YamlConfiguration();
+                for (String rank : perms.getGroups()) {
+                    ranks.set(rank, "&c" + rank);
+                }
+//                getFile("ranks.yml").createNewFile();
+                ranks.save(getFile("ranks.yml"));
+            } catch (IOException e) {
+                getLogger().severe("Failed to save default ranks.yml");
+            }
+        }
+
+        ranks.clear();
+
+        YamlConfiguration ranksConfig = getConfig("ranks.yml");
+        ranksConfig.getKeys(false).stream().forEach(s -> ranks.put(s, colorize(ranksConfig.getString(s))));
+    }
+
+    public YamlConfiguration getConfig(String path) {
+        return YamlConfiguration.loadConfiguration(getFile(path));
+    }
+
+    public File getFile(String path) {
+        return new File(getDataFolder(), path.replace('/', File.pathSeparatorChar));
     }
 
     private boolean setupPermissions() {
@@ -46,6 +84,10 @@ public class AdvancedList extends JavaPlugin {
 
     public String colorize(String input) {
         return ChatColor.translateAlternateColorCodes('&', input);
+    }
+
+    public String getDisplayRank(String rank) {
+        return ranks.getOrDefault(rank, rank);
     }
 
 }

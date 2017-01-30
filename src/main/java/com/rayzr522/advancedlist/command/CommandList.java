@@ -49,7 +49,7 @@ public class CommandList implements CommandExecutor {
         sender.sendMessage(String.format(plugin.getMessage("player-count"), Bukkit.getOnlinePlayers().size(), Bukkit.getMaxPlayers()));
 
         String rankForamt = plugin.getConfig().getString("rank-format");
-        output.entrySet().stream().map(e -> String.format(rankForamt, e.getKey(), e.getValue())).map(plugin::colorize).forEach(sender::sendMessage);
+        output.entrySet().stream().map(e -> String.format(rankForamt, plugin.getDisplayRank(e.getKey()), e.getValue())).map(plugin::colorize).forEach(sender::sendMessage);
 
         return true;
     }
