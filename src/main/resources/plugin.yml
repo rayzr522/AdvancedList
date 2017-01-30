@@ -3,10 +3,13 @@ name: AdvancedList
 version: 1.0.0
 description: An advanced, prettier, per-role /list for Bukkit.
 author: Rayzr
-#depend: [CreativelyNamedLib]
-#commands:
-#  advancedlist:
-#    description: AdvancedList main command
-#    aliases: [alias1,alias2]
-#    usage: "/advancedlist [command]"
-#    permission: AdvancedList.main
+depend: [Vault]
+commands:
+  list:
+    description: Lists all players currently online
+    usage: /list
+    permission: AdvancedList.use
+  advancedlist:
+    description: Admin command for AdvancedList
+    usage: /advancedlist [reload]
+    permission: AdvancedList.admin

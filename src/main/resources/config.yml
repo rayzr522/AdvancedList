@@ -1,0 +1,11 @@
+# Example output of this:
+# [Mod]: Player1, Player2, Player3, Player4, ...
+# [Admin]: Player5, Player6, Player7, Player8, ...
+rank-format: "&6[&4%s&6]&8 %s"
+
+prefix: "&8\u00bb&6 "
+
+messages:
+  player-count: "There are &c%d&6/&c%d&6 players online"
+  reloaded: "The config has been &creloaded"
+  version: "This server is running &cAdvancedList&6 version &c%s"
